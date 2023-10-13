@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>       
+        function CalcularOperaciones()
+        {
+                var n1,n2,suma,resta,producto,division;
+                var op=document.form.cboopcion.value;
+                op=parseInt(op);
+
+                n1=document.form.txtn1.value;
+                n1=parseInt(n1);
+
+                n2=document.form.txtn2.value;
+                n2=parseInt(n2);
+
+                switch(op)
+                {
+                  case 1: {   suma = CalcularSuma(n1,n2); msj="La suma es : "+suma; break;}
+                  case 2: {   resta = CalcularResta(n1,n2); msj="La resta es : "+resta; break;}
+                  case 3: {   producto = CalcularProducto(n1,n2); msj="El producto es : "+producto; break;}
+                  case 4: {   division = CalcularDivision(n1,n2); msj="La division es : "+division; break;}
+                }
+            document.write(msj);
+            alert(msj);    
+            }
+        function CalcularSuma(n1,n2) 
+        { var suma=0;
+            suma=n1+n2;
+            return suma;
+        }
+        function CalcularResta(n1,n2) 
+        { var resta=0;
+            resta=n1-n2;
+            return resta;
+        }
+        function CalcularProducto(n1,n2) 
+        { var producto=0;
+            producto=n1*n2;
+            return producto;
+        }
+        function CalcularDivision(n1,n2) 
+        { var division=0;
+            division=n1/n2;
+            return division;
+        }
+</script>
+</head>
+<body>
+<center>
+    <form name="form">
+        Elegir Operacion 
+        <select name="cboopcion">
+            <option value="0" selectd>------</option>
+            <option value="1">sumar</option>
+            <option value="2">restar</option>
+            <option value="3">multiplicar</option>
+            <option value="4">dividir</option>
+        </select>
+        <br>
+        Numero 1: <input type="text"    name="txtn1"><br>
+        Numero 2: <input type="text"    name="txtn2"><br>
+
+        <input  type="button"   value="calcular"    onclick="CalcularOperaciones()">
+    </form>
+</center>
+</body>
+</html>
